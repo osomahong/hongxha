@@ -1,10 +1,8 @@
 ---
 layout: post
 title: 전환 추적기간은 무엇인가?
-subheading: 클릭 후 7일 또는 조회 후 1일은 무슨 뜻일까?
 categories: 디지털마케팅
 tags: 광고 전환
-sidebar:
 permalink: /what-is-click-through-attribution
 ---
 # 광고를 하다보면 심심치 않게 **전환 추적기간**이라는 항목을 발견할 수 있다.
