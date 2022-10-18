@@ -1,9 +1,13 @@
 ---
 layout: post
-title: 전환 추적기간은 무엇인가?
+title: '전환 추적기간은 무엇인가?'
 categories: 디지털마케팅
-tags: 광고 전환
+tags: [ 광고, 전환 ]
 permalink: /what-is-click-through-attribution
+featured_image_thumbnail: https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80
+featured_image: https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80
+featured: true
+hidden: true
 ---
 # 광고를 하다보면 심심치 않게 **전환 추적기간**이라는 항목을 발견할 수 있다.
 광고할 때 전환을 모두 중요하게 생각하니까 당연한거 아닌가 싶다가 **클릭 후 7일, 조회 후 1일 전환 기준** 같은 의미심장한 문장에 한번 눈이 가면 찜찜하게 그게 뭘까 하는 생각이 머릿속에서 떨쳐지지 않을 것이다. 아마 그런 이유때문에 이런 글도 찾아오셨을 것이다.
