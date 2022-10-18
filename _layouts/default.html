@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P2PVWVJ');</script>
+    <!-- End Google Tag Manager -->
+        <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.name | escape }}{% endif %}</title>
+    <!-- SEO Tag -->
+      <meta name="twitter:card" content="summary_large_image" />
+      {% if page.title %}
+        <meta property="og:title" content="{{ page.title }}" />
+        <meta name="twitter:title" content="{{ page.title }}" />
+      {% else %}
+        <meta property="og:title" content="{{ site.title }} - {{ site.tagline }}" />
+        <meta name="twitter:title" content="{{ site.title }} - {{ site.tagline }}" />
+      {% endif %}
+      {% if page.title %}
+        <meta property="og:type" content="article" />
+      {% else %}
+        <meta property="og:type" content="website" />
+      {% endif %}
+      {% if page.description %}
+        <meta name="description" content="{{ page.description }}" />
+        <meta property="og:description" content="{{ page.description }}" />
+        <meta name="twitter:description" content="{{ page.description }}" />
+      {% else %}
+        <meta name="description" content="{{ site.description }}" />
+        <meta property="og:description" content="{{ site.description }}" />
+        <meta name="twitter:description" content="{{ site.description }}" />
+      {% endif %}
+      {% if page.url %}
+        <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+      {% endif %}
+      {% if page.date %}
+        <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+        <meta property="article:author" content="Hongtani" />
+      {% endif %}
+      {% if page.feature %}
+        <meta property="og:image" content="{{ site.github.url }}{{ page.feature }}" />
+        <meta name="twitter:image:src" content="{{ site.github.url }}{{ page.feature }}" />
+      {% else %}
+        <meta property="og:image" content="{{ site.baseurl }}{{ page.featured_image }}" />
+        <meta name="twitter:image:src" content="{{ site.baseurl }}{{ page.featured_image }}" />
+      {% endif %}
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:site_name" content="디지털마케터 Hongtani의 블로그입니다." />
+      {% if page.categories %}
+        {% for category in page.categories limit:1 %}
+        <meta property="article:section" content="{{ category }}" />
+        {% endfor %}
+      {% endif %}
+      {% if page.tags %}
+        {% for tag in page.tags %}
+        <meta property="article:tag" content="{{ tag }}" />
+        {% endfor %}
+      {% endif %}
+      <!-- End SEO Tag -->
+
+
+    <!-- Site Favicon -->
+    <link rel="shortcut icon" href="{{ site.url }}/{{ site.baseurl }}{{ site.favicon }}" type="image/png" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <!-- Font Embed Code -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i|Karla:400,400i,700,700i" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS Styles -->
+    <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+</head>
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+
+<body class="{{ layout }}">
+    <div id="page" class="site">
+        {% include header.html %}
+        <div id="content" class="site-content fadeInDown delay_075s">
+            <div class="inner-wide">
+                {{ content }}
+
+                {% if paginator.total_posts > site.paginate %}
+                {% if page.class == 'tag-template' %}
+                {% include tag-pagination.html %}
+                {% endif %}
+                {% endif %}
+
+                {% if site.mailchimp_url and page.class == 'tag-template' %}
+                {% include newsletter-box.html %}
+                {% endif %}
+                {% include footer.html %}
+            </div><!-- .inner-wide -->
+        </div><!-- .site-content -->
+    </div><!-- .site -->
+
+    {% include analytics.html %}
+    <!-- Javascript Assets -->
+    <script src="{{ site.baseurl }}/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
+<!--
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2PVWVJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- mailchimp -->
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/d6e9edd33e0c04cb22fe59a1f/b42a7dd22a6e7c8acfc209c7a.js");</script>
+</body>
+
+</html>

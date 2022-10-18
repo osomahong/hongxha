@@ -1,0 +1,162 @@
+---
+layout: default
+disqus: false
+post_class: post-template
+---
+
+<main id="main" class="site-main">
+
+    <article class="post-full inner">
+
+        <header class="post-header">
+            <div class="post-meta">
+                <time class="post-date" datetime="{{ page.date | date: "%Y-%m-%d" }}">
+                    {{ page.date | date: "%B %-d, %Y" }}
+                </time>
+            </div><!-- .post-meta -->
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.tags.size > 0 %}
+            <p class="post-tags">
+              <span class="post-share-title">태그를 눌러보세요:</span>
+                {% for tag in page.tags %}<a href="{{ site.baseurl }}/tags/index.html#{{ tag | cgi_escape }}"
+                    rel="tag">{{ tag }}</a>
+                {% unless forloop.last %} {% endunless %}{% endfor %}
+            </p>
+            {% endif %}
+        </header><!-- .post-header -->
+
+        {% if page.featured_image %}
+        <div class="post-thumbnail">
+            <img src="{{ site.baseurl }}{{ page.featured_image }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+        <div class="post-content">
+            {{content}}
+        </div>
+        <footer class="post-footer">
+            <div class="post-share">
+              <span class="post-share-title">공유하기:</span>
+              <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+              <script>
+                  Kakao.init("ef43ad5f94d27bb87810899097e82c0d");   // 아까 복사해둔 JavaScript 키
+
+                  function sendLink(){
+                    var _title = "{{ page.title }}";
+                    var _desc = "{{ site.description }}"
+                    var _img = "{{ site.url }}/{{ page.featured_image }}";
+
+                    Kakao.Link.sendDefault({
+                      objectType: 'feed',
+                      content: {
+                        title: _title,
+                        description: _desc,
+                        imageUrl: _img,
+                        link: {
+                          mobileWebUrl: '{{ site.url }}{{ page.url }}',
+                          webUrl: '{{ site.url }}{{ page.url }}',
+                        },
+                      },
+                      buttons: [
+                        {
+                          title: '게시글 보기',
+                          link: {
+                            mobileWebUrl: '{{ site.url }}{{ page.url }}',
+                            webUrl: '{{ site.url }}{{ page.url }}',
+                          },
+                        },
+                      ]
+                    });
+                  }
+                  function clip(){
+                    var url = '';
+                    var textarea = document.createElement("textarea");
+                    document.body.appendChild(textarea);
+                    url = window.document.location.href;
+                    textarea.value = url;
+                    textarea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(textarea);
+                    alert("링크가 복사되었습니다.")
+                  }
+
+              </script>
+              <a href="" id="copy_btn" class="postshare" onclick="clip(); return false;"><img class="sharepost" src="/assets/images/copy.png" alt="링크복사"> 링크복사</a>
+              <a class="postshare" id="kakao-link-btn" href="javascript:sendLink()"><img class="sharepost" src="/assets/images/kakao.png" alt="카톡공유"> 카카오톡</a>
+                <a target="_blank" class="postshare"
+                    href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}"><img class="sharepost" src="/assets/images/facebook.png" alt="페북공유"> 페이스북</a>
+                <a target="_blank" class="postshare"
+                    href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.production_url }}{{ page.url | remove_first: '/' }}"><img class="sharepost" src="/assets/images/twitter.png" alt="트윗공유"> 트위터</a>
+            </div><!-- .share-post -->
+        </footer>
+        {% include disqus.html %}
+    </article>
+    {% if site.mailchimp_url %}
+    {% include newsletter-box.html %}
+    {% endif %}
+    <section class="read-next inner">
+        <h2 class="read-next-title">Read Next</h2>
+        {% if page.previous.url %}
+        <article class="post">
+            <header class="post-header">
+                <div class="post-meta">
+                    <time class="published" datetime="{{page.previous.date | date: '%B %-d, %Y'}}">{{page.previous.date
+                            | date: "%B %-d, %Y"}}</time>
+                </div>
+                <h3 class="post-title"><a href="{{ site.baseurl }}{{page.previous.url}}">{{page.previous.title}}</a>
+                </h3>
+                <p class="post-tags">
+                    {% if page.previous.tags.size > 0 %}
+                    {% for tag in page.previous.tags %}
+                    {% if forloop.index == page.previous.tags.size %}
+                    <a href='{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}' ', '-' }}/'>{{ tag | capitalize
+                            }}</a>
+                    {% else %}
+                    <a href='{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}' ', '-' }}/'>{{ tag | capitalize
+                            }}</a>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </p>
+            </header>
+        </article>
+        {% endif %}
+        {% if page.next.url %}
+        <article class="post">
+            <header class="post-header">
+                <div class="post-meta">
+                    <time class="published" datetime="{{page.next.date | date: '%B %-d, %Y'}}">{{page.next.date |
+                            date: "%B %-d, %Y"}}</time>
+                </div>
+                <h3 class="post-title"><a href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}}</a></h3>
+                <p class="post-tags">
+                    {% if page.next.tags.size > 0 %}
+                    {% for tag in page.next.tags %}
+                    {% if forloop.index == page.next.tags.size %}
+                    <a href='{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}' ', '-' }}/'>{{ tag | capitalize
+                            }}</a>
+                    {% else %}
+                    <a href='{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}' ', '-' }}/'>{{ tag | capitalize
+                            }}</a>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </p>
+            </header>
+        </article>
+        {% endif %}
+    </section><!-- .read-next -->
+
+    <!-- Create a sorted array of tags -->
+    {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor
+        %}{%
+        endcapture %} {% assign sortedTags = site_tags | split:',' | sort %}
+    <section class="tagcloud inner">
+        <h2 class="tagcloud-title">하단의 태그를 누르시면 더 많은 포스팅을 보실 수 있습니다.</h2>
+        <div class="tag-links">
+            {% for tag in sortedTags %}
+            <a href='{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}'>{{ tag | camelcase }}</a>
+            {% endfor %}
+        </div><!-- .tag-links -->
+    </section><!-- .tagcloud -->
+
+</main><!-- .site-main -->
