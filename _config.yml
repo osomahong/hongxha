@@ -1,8 +1,7 @@
 # Site setings
-title: "sssss"
+title: "디지털마케팅의 최고가 되면 광고민수가 될 수 있겠지"
 name: '광고민수'
-description: '가 되고 싶은 디지털마케터의 블로그'
-meta_description: '디지털마케터는 디지털비즈니스의 중심입니다.'
+description: '디지털마케팅 최고로 잘하는 광고민수 되기'
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
@@ -23,7 +22,7 @@ thankyou_page_description: "작성이 완료되었습니다. 메일은 확인하
 
 # Social links
 #facebook: 'groups/291919502455468'
-#github: 'hongtani1/royce-theme-blog-kr'
+github: 'osomahong/hongxha'
 #codepen: 'username'
 #dribbble: 'username'
 #medium: '@username'
@@ -37,16 +36,17 @@ linkedin: '승협-홍-1771b2240'
 navigation:
   - text: Home
     url: /
-  - text: About
-    url: /about
+  - text: Search
+    url: /search
   - text: Tags
     url: /tags
   - text: Blog Guide
     url: /blog-guide
   - text: Contact Me
     url: /contact
-  - text: Search
-    url: /search
+  - text: About
+    url: /about
+
 
 # Required Plugins
 plugins_dir:

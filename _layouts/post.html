@@ -26,7 +26,7 @@ post_class: post-template
         </header><!-- .post-header -->
 
         {% if page.featured_image %}
-        <div class="post-thumbnail">
+        <div class="post-thumbnail-post">
             <img src="{{ site.baseurl }}{{ page.featured_image }}" alt="{{ page.title }}">
         </div>
         {% endif %}
@@ -84,8 +84,6 @@ post_class: post-template
               <a class="postshare" id="kakao-link-btn" href="javascript:sendLink()"><img class="sharepost" src="/assets/images/kakao.png" alt="카톡공유"> 카카오톡</a>
                 <a target="_blank" class="postshare"
                     href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}"><img class="sharepost" src="/assets/images/facebook.png" alt="페북공유"> 페이스북</a>
-                <a target="_blank" class="postshare"
-                    href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.production_url }}{{ page.url | remove_first: '/' }}"><img class="sharepost" src="/assets/images/twitter.png" alt="트윗공유"> 트위터</a>
             </div><!-- .share-post -->
         </footer>
         {% include disqus.html %}

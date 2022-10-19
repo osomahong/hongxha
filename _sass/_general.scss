@@ -356,12 +356,34 @@ video {
 .kg-embed-card > .fluid-width-video-wrapper {
   margin: 0;
 }
-
-/* Images */
 img {
   height: auto;
   max-width: 100%;
 }
+img + em {
+  display: block;
+  text-align: center;
+  font-size: .8rem;
+  color: light-grey;
+}
+
+@media only screen and (min-width: 1086px){
+  /* Images */
+  .post-thumbnail-post img {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+@media only screen and (max-width: 1085px){
+  /* Images */
+  .post-thumbnail-post img {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
 
 .kg-image-card,
 .kg-gallery-card {
