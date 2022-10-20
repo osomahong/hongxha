@@ -278,51 +278,68 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
             <div class="post-share">
               <span class="post-share-title">공유하기:</span>
               <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-              <script>
-                  Kakao.init("ef43ad5f94d27bb87810899097e82c0d");   // 아까 복사해둔 JavaScript 키
+              <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"
+  integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('7de113c914d62e5bfd449b77aba9c39e'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 
-                  function sendLink(){
-                    var _title = "전환 추적기간은 무엇인가?";
-                    var _desc = "디지털마케팅 최고로 잘하는 광고민수 되기"
-                    var _img = "http://localhost:4000//assets/images/posts/20221018/post_thumb-001.jpg";
+<script>
+  function loginWithKakao() {
+    Kakao.Auth.authorize({
+      redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
+      state: 'sendme_scrap',
+      scope: 'talk_message', // 앱 동의 항목 설정 및 사용자 동의 필요
+    });
+  }
 
-                    Kakao.Link.sendDefault({
-                      objectType: 'feed',
-                      content: {
-                        title: _title,
-                        description: _desc,
-                        imageUrl: _img,
-                        link: {
-                          mobileWebUrl: 'http://localhost:4000/what-is-click-through-attribution',
-                          webUrl: 'http://localhost:4000/what-is-click-through-attribution',
-                        },
-                      },
-                      buttons: [
-                        {
-                          title: '게시글 보기',
-                          link: {
-                            mobileWebUrl: 'http://localhost:4000/what-is-click-through-attribution',
-                            webUrl: 'http://localhost:4000/what-is-click-through-attribution',
-                          },
-                        },
-                      ]
-                    });
-                  }
-                  function clip(){
-                    var url = '';
-                    var textarea = document.createElement("textarea");
-                    document.body.appendChild(textarea);
-                    url = window.document.location.href;
-                    textarea.value = url;
-                    textarea.select();
-                    document.execCommand("copy");
-                    document.body.removeChild(textarea);
-                    alert("링크가 복사되었습니다.")
-                  }
+  function sendToMe() {
+    Kakao.API.request({
+      url: '/v2/api/talk/memo/scrap/send',
+      data: {
+        request_url: 'https://developers.kakao.com',
+      },
+    })
+      .then(function(res) {
+        alert('success: ' + JSON.stringify(res));
+      })
+      .catch(function(err) {
+        alert('error: ' + JSON.stringify(err));
+      });
+  };
 
-              </script>
+    // 아래는 데모를 위한 UI 코드입니다.
+    displayToken()
+    function displayToken() {
+      var token = getCookie('authorize-access-token');
+
+      if(token) {
+        Kakao.Auth.setAccessToken(token);
+        document.querySelector('#token-result').innerText = 'login success, ready to send a message';
+        document.querySelector('button.api-btn').style.visibility = 'visible';
+      }
+    }
+
+    function getCookie(name) {
+      var parts = document.cookie.split(name + '=');
+      if (parts.length === 2) { return parts[1].split(';')[0]; }
+    }
+
+  function clip(){
+    var url = '';
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.document.location.href;
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("링크가 복사되었습니다.")
+  }
+</script>
+
               <a href="" id="copy_btn" class="postshare" onclick="clip(); return false;"><img class="sharepost" src="/assets/images/copy.png" alt="링크복사"> 링크복사</a>
-              <a class="postshare" id="kakao-link-btn" href="javascript:sendLink()"><img class="sharepost" src="/assets/images/kakao.png" alt="카톡공유"> 카카오톡</a>
+              <a class="postshare" id="kakao-link-btn" href="javascript:sendToMe()"><img class="sharepost" src="/assets/images/kakao.png" alt="카톡공유"> 카카오톡</a>
                 <a target="_blank" class="postshare"
                     href="https://www.facebook.com/sharer/sharer.php?u=https://hongxha.com/what-is-click-through-attribution"><img class="sharepost" src="/assets/images/facebook.png" alt="페북공유"> 페이스북</a>
             </div><!-- .share-post -->

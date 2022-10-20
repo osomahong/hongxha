@@ -40,8 +40,8 @@ navigation:
     url: /search
   - text: Tags
     url: /tags
-  - text: Blog Guide
-    url: /blog-guide
+  #- text: Blog Guide
+  #  url: /blog-guide
   - text: Contact Me
     url: /contact
   - text: About
