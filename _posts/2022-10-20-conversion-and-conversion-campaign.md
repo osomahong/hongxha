@@ -1,16 +1,15 @@
 ---
 layout: post
-title: '전환 추적기간은 무엇인가?'
+title: '아주아주 중요한 전환 캠페인'
 categories: 디지털마케팅
-description : '전환 캠페인을 할 때 매우 중요한 요소인 클릭 후 7일 같은 전환 추적기간에 대해 알아보기'
+description : '전환캠페인과 전환 지연시간 보고서에 대해 알아보기'
 tags: [ 광고, 전환 ]
-permalink: /what-is-click-through-attribution
-featured_image_thumbnail: assets/images/posts/221018/post_thumb-001.jpg
-featured_image: /assets/images/posts/20221018/post_thumb-001.jpg
+permalink: /conversion-and-conversion-campaign
+featured_image_thumbnail: assets/images/posts/221020/post_thumb-001.jpg
+featured_image: /assets/images/posts/20221020/post_thumb-001.jpg
 featured: true
 hidden: true
 ---
-ㅁㄴㅇㅁㄴㅇㄴㅁ
 
 # 전환이 제일 중요하다.
 
