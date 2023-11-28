@@ -1,7 +1,7 @@
 # Site setings
-title: "디지털마케팅의 최고가 되면 광고민수가 될 수 있겠지"
-name: '광고민수'
-description: '디지털마케팅 최고로 잘하는 광고민수 되기'
+title: "오픈소스마케팅 디지털마케터 홍승협입니다."
+name: '홍승협'
+description: '디지털마케터 홍승협입니다.'
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
@@ -9,7 +9,7 @@ author:
   greetings: "<b>Tags</b> 메뉴와 <b>Search</b> 메뉴를 <br>이용하시면 편리합니다."
 favicon: 'assets/images/favicon.ico'
 baseurl:
-production_url: https://hongxha.com/
+production_url: https://digitalmarketer.co.kr/
 disqus: 'hongtani'
 mailchimp_url: '//hongtani.us5.list-manage.com/subscribe/post?u=d6e9edd33e0c04cb22fe59a1f&amp;id=9889a03d62'
 # Add your GA Tracking Id

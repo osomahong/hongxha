@@ -4,7 +4,7 @@ title: Blog Guide
 featured_image: /assets/images/pages/style_guides.jpg
 ---
 
-Hongtani의 디지털마케팅 블로그는 jekyll로 만들었습니다. jekyll은 템플릿, 부분, 유동 코드, 마크다운 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 루비(Ruby) 언어로 제공되는 구문 분석 엔진입니다. 일반적으로 사용되는 브런치(brunch)나 티스토리(tistory)나 네이버(Naver)로 만들지 않은 것은, 이 블로그를 통해 직접 [**SEO**](http://hongtani.com/tags/index.html#SEO)나 **GA, GTM**등 디지털마케팅의 기술적 요소들을 직접 활용하고 모든 부분에 직접 개입하고 싶었기 때문입니다.
+Hongtani의 디지털마케팅 블로그는 jekyll로 만들었습니다. jekyll은 템플릿, 부분, 유동 코드, 마크다운 등과 같은 동적 구성 요소에서 정적 웹 사이트를 구축하는 데 사용되는 루비(Ruby) 언어로 제공되는 구문 분석 엔진입니다. 일반적으로 사용되는 브런치(brunch)나 티스토리(tistory)나 네이버(Naver)로 만들지 않은 것은, 이 블로그를 통해 직접 [**SEO**](https://digitalmarketer.co.kr/tags/index.html#SEO)나 **GA, GTM**등 디지털마케팅의 기술적 요소들을 직접 활용하고 모든 부분에 직접 개입하고 싶었기 때문입니다.
 
 본 페이지는 이 블로그의 마케팅 퍼널(Funnel)을 고려한 설계의도와 디지털마케팅에 필요한 분석을 어떤 식으로 설치했는지 정리했습니다.
 
@@ -24,7 +24,7 @@ Hongtani의 디지털마케팅 블로그는 jekyll로 만들었습니다. jekyll
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
     &lt;!-- Site Favicon --&gt;
-    &lt;link rel="shortcut icon" href="http://hongtani.com/assets/images/favicon.ico" type="image/png" /&gt;
+    &lt;link rel="shortcut icon" href="https://digitalmarketer.co.kr/assets/images/favicon.ico" type="image/png" /&gt;
     &lt;!-- Font Embed Code --&gt;
     &lt;link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i|Karla:400,400i,700,700i" rel="stylesheet"&gt;
     &lt;!-- CSS Styles --&gt;
@@ -72,7 +72,7 @@ SEO의 기본으로 널리 알려진 meta태그부터 오픈그래프태그, 캐
 
 ##### 블로그에 설정된 GA 목표 이벤트
 
-![Hongtani 블로그의 GA 목표 이벤트](https://hongtani.com/assets/images/posts/2021/myga_1.jpg)
+![Hongtani 블로그의 GA 목표 이벤트](https://digitalmarketer.co.kr//assets/images/posts/2021/myga_1.jpg)
 
 
 ## 4. GTM
@@ -80,7 +80,7 @@ SEO의 기본으로 널리 알려진 meta태그부터 오픈그래프태그, 캐
   구글 태그매니저는 UA와 GA4의 집계수단으로 매우 유용합니다.
   모든 기능과 모든 요소를 맞춤 형식으로 원하는대로 받아올 수 있으며, 현재 블로그에는 페이지 조회를 제외한 모든 기능에 GTM을 통한 이벤트 수집 기능을 설치했습니다. (GA4 작업 전)
 
-  GTM 관련 궁금하신 점은 [문의하기](http://hongtani.com/contact)를 통해 문의해주세요.
+  GTM 관련 궁금하신 점은 [문의하기](https://digitalmarketer.co.kr//contact)를 통해 문의해주세요.
 
 ## 5. 콘텐츠
 
