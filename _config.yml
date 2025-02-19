@@ -6,7 +6,7 @@ logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
   image: 'authorimage.jpg'
-  greetings: "<b>Tags</b> 메뉴와 <b>Search</b> 메뉴를 <br>이용하시면 편리합니다."
+  greetings: "ㅇㅇ 메뉴와 <b>Search</b> 메뉴를 <br>이용하시면 편리합니다."
 favicon: 'assets/images/favicon.ico'
 baseurl:
 production_url: https://digitalmarketer.co.kr/

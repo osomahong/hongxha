@@ -40,7 +40,7 @@ post_class: post-template
               <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"
   integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
 <script>
-  Kakao.init('7de113c914d62e5bfd449b77aba9c39e'); // 사용하려는 앱의 JavaScript 키 입력
+  Kakao.init('41a30286237873df0e904603fbf9cfed'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 
 <script>
@@ -51,6 +51,9 @@ post_class: post-template
       scope: 'talk_message', // 앱 동의 항목 설정 및 사용자 동의 필요
     });
   }
+  
+  Kakao.Auth.setAccessToken(Kakao.Auth.getAcceessToken(), true);
+
 
   function sendToMe() {
     Kakao.API.request({
