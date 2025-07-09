@@ -5,9 +5,10 @@ categories: AI,바이브코딩
 description : '비전공 마케터가 AI 바이브코딩으로 GTM 리포트 생성기를 만든 경험과 솔직한 난이도 후기를 공개합니다.'
 tags: [바이브코딩, 비전공자 바이브코딩, 바이브코딩 난이도, GTM 리포트 생성기, AI 개발, 생성형 AI]
 permalink: /vibecoding-1
-featured_image_thumbnail: assets/images/posts/20250219/post_thumb-001.png
-featured_image: /assets/images/posts/20250219/post_thumb-001.png
+featured_image_thumbnail: /assets/images/posts/20250709/vibecoding-thumb.png
+featured_image: /assets/images/posts/20250709/vibecoding-main.png
 featured: true
+hidden: true
 ---
 
 ## 개요: 비전공자도 AI로 개발 가능? 바이브코딩 난이도와 실제 경험!
